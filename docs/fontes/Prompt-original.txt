@@ -1,0 +1,571 @@
+# PROMPT COMPLETO — PROJETO LAVICAMETA
+
+## 1. OBJETIVO GERAL
+
+Você atuará como arquiteto de software, analista de requisitos e desenvolvedor sênior do projeto **Lavicameta**.
+
+Sua responsabilidade será analisar integralmente a documentação e o protótipo fornecidos, compreender o funcionamento do aplicativo, identificar seus requisitos e fluxos, estabelecer a arquitetura do sistema e preparar sua estrutura inicial de desenvolvimento.
+
+O objetivo desta primeira etapa é entregar um projeto organizado, documentado e preparado para receber implementações futuras, respeitando os princípios de programação orientada a objetos, separação de responsabilidades e boas práticas de engenharia de software.
+
+O resultado deverá ser uma pasta completa, compactada em um arquivo chamado **Lavicameta.zip**, contendo os arquivos Markdown principais, a estrutura inicial do Android, backend, banco de dados e documentação.
+
+Não implemente as funcionalidades completas nesta primeira etapa.
+
+## 2. ANÁLISE DA DOCUMENTAÇÃO E DO PROTÓTIPO
+
+Leia todos os arquivos disponibilizados para o projeto.
+
+Identifique:
+
+- Objetivo do Lavicameta e problema que pretende resolver.
+- Público-alvo e perfis de usuários.
+- Funcionalidades existentes no protótipo.
+- Requisitos funcionais e não funcionais.
+- Fluxos de navegação e interação.
+- Regras de negócio.
+- Processos de autenticação e gerenciamento de usuários.
+- Funcionalidades administrativas.
+- Integrações externas.
+- Entidades e informações que deverão ser armazenadas.
+- Funcionalidades incompletas ou ainda não definidas.
+- Dependências entre módulos.
+
+Classifique as informações encontradas como:
+
+- **Confirmado:** presente explicitamente na documentação.
+- **Inferido:** identificado a partir do protótipo, mas precisa de validação.
+- **Proposto:** recomendação técnica para melhorar a arquitetura ou o funcionamento.
+- **Pendente:** informação que ainda precisa ser definida.
+
+Não invente requisitos ou apresente funcionalidades propostas como se estivessem aprovadas.
+
+Caso alguma tecnologia já esteja definida na documentação, verifique sua compatibilidade com a arquitetura estabelecida neste prompt.
+
+## 3. TECNOLOGIAS E ARQUITETURA
+
+Utilize inicialmente as seguintes tecnologias:
+
+### Aplicativo Android
+
+- Android Studio.
+- Java.
+- Desenvolvimento nativo Android.
+- Programação orientada a objetos.
+- Arquitetura MVVM.
+- Separação entre interface, ViewModel, domínio e camada de dados.
+- Componentes AndroidX e Jetpack, quando necessários.
+- Retrofit ou solução equivalente justificada para comunicação com a API.
+
+### Backend
+
+- Java.
+- Spring Boot.
+- API REST.
+- Spring Data JPA/Hibernate.
+- Maven como ferramenta de build.
+- Arquitetura em camadas.
+- Separação entre Controller, Service, Repository, Entity, DTO, Configuration, Integration e Exception.
+- Validação de entradas.
+- Tratamento centralizado de erros.
+- Autenticação e autorização conforme os requisitos identificados.
+
+### Banco de dados
+
+- MySQL como banco de produção.
+- Modelagem relacional.
+- Integridade referencial.
+- Migrations versionadas.
+- Persistência gerenciada pelo backend.
+- Credenciais configuradas por variáveis de ambiente.
+
+### Princípios de desenvolvimento
+
+O sistema deverá respeitar:
+
+- Programação orientada a objetos.
+- Princípios SOLID.
+- DRY.
+- KISS.
+- Separação de responsabilidades.
+- Baixo acoplamento e alta coesão.
+- Código legível e testável.
+- Organização modular.
+
+Evite abstrações desnecessárias e bibliotecas sem justificativa técnica.
+
+## 4. IDENTIFICAÇÃO DOS FLUXOS DO SISTEMA
+
+Após analisar o protótipo, documente o fluxo geral do aplicativo.
+
+Identifique a sequência de telas e as operações necessárias para cada funcionalidade.
+
+Descreva:
+
+1. Entrada e navegação inicial.
+2. Cadastro e autenticação, caso previstos.
+3. Funcionalidades disponíveis aos usuários.
+4. Operações que precisam de comunicação com o backend.
+5. Regras de validação.
+6. Persistência das informações.
+7. Processos administrativos.
+8. Fluxos de pagamento.
+9. Estados de erro e exceção.
+10. Encerramento ou conclusão das operações.
+
+Quando necessário, represente os fluxos com diagramas Mermaid.
+
+Relacione cada fluxo com suas respectivas telas, endpoints, regras de negócio e entidades.
+
+## 5. LEVANTAMENTO DOS REQUISITOS
+
+Organize os requisitos identificados da seguinte maneira:
+
+### Requisitos funcionais
+
+Numere como RF001, RF002, RF003 etc.
+
+Cada requisito deve apresentar:
+
+- Identificador.
+- Descrição.
+- Origem na documentação.
+- Prioridade.
+- Dependências.
+- Critérios de aceitação.
+- Estado de confirmação.
+
+### Requisitos não funcionais
+
+Numere como RNF001, RNF002 etc.
+
+Considere segurança, desempenho, disponibilidade, usabilidade, manutenção, compatibilidade Android e integridade de dados.
+
+### Regras de negócio
+
+Numere como RN001, RN002 etc.
+
+Identifique as regras de validação, condições e restrições específicas do aplicativo.
+
+### Priorização
+
+Classifique as funcionalidades entre:
+
+- Essenciais para o MVP.
+- Necessárias em etapas posteriores.
+- Melhorias futuras.
+- Pendentes de definição.
+
+Não transforme recomendações em requisitos obrigatórios sem deixar clara sua origem.
+
+## 6. INTEGRAÇÃO DE PAGAMENTOS — API BEX
+
+O Lavicameta utilizará o checkout da API Bex, conforme a integração previamente definida.
+
+Essa decisão tecnológica deve ser considerada estabelecida.
+
+Analise a documentação disponível da API antes de definir os contratos de integração.
+
+A arquitetura deverá prever:
+
+- Integração entre aplicativo e backend.
+- Criação de transações no backend.
+- Comunicação segura com a API Bex.
+- Abertura do checkout para o usuário.
+- Retorno ao aplicativo após o processo de pagamento.
+- Consulta ou recebimento da confirmação de pagamento.
+- Tratamento de pagamentos aprovados, pendentes, recusados e cancelados.
+- Proteção contra duplicidade de transações.
+- Registro e rastreabilidade das operações.
+
+A confirmação do pagamento deverá ser validada pelo backend, conforme os mecanismos efetivamente disponibilizados pelo provedor.
+
+Nunca trate somente o retorno visual do checkout como confirmação definitiva.
+
+Não invente endpoints, métodos de autenticação, credenciais ou recursos não presentes na documentação.
+
+Nesta etapa, documente e prepare a arquitetura da integração, sem implementá-la integralmente.
+
+## 7. ORGANIZAÇÃO DOS ARQUIVOS MARKDOWN
+
+O projeto deverá conter três documentos principais na raiz.
+
+### README.md
+
+Será a documentação central do Lavicameta.
+
+Deverá apresentar:
+
+- Nome e descrição do projeto.
+- Objetivo geral.
+- Público-alvo.
+- Funcionalidades identificadas.
+- Tecnologias adotadas.
+- Arquitetura geral.
+- Fluxos principais.
+- Resumo dos requisitos.
+- Organização de diretórios.
+- Instruções para configurar o ambiente.
+- Orientações para executar Android, Spring Boot e MySQL.
+- Integrações previstas.
+- Planejamento de implementação.
+- Status atual e pendências.
+- Links para documentação complementar.
+
+Não apresente funcionalidades planejadas como se já estivessem prontas.
+
+### STYLE.md
+
+Será o documento de padronização visual do aplicativo.
+
+A identidade visual definitiva ainda será desenvolvida.
+
+Portanto, prepare o documento para receber posteriormente:
+
+- Logotipo.
+- Paleta de cores.
+- Tipografia.
+- Ícones.
+- Botões.
+- Cards.
+- Campos de formulário.
+- Menus.
+- Navegação.
+- Espaçamentos.
+- Bordas.
+- Estados de carregamento, sucesso e erro.
+- Responsividade.
+- Acessibilidade.
+- Padrões de componentes.
+
+Identifique os aspectos ainda não decididos com a indicação **Pendente de definição**.
+
+Não invente uma logo, cores oficiais ou tipografia definitiva.
+
+Para a implementação Android, priorize a centralização de recursos de estilo e tema, evitando valores visuais espalhados pelo código.
+
+### AGENTS.md
+
+Será o manual obrigatório de desenvolvimento para todos os agentes de IA que trabalharem no Lavicameta.
+
+Esse documento deverá estabelecer regras claras para organização, programação, refatoração, nomenclatura, documentação, testes e comportamento dos agentes.
+
+#### Padrão de código
+
+- Classes e interfaces em PascalCase.
+- Métodos e atributos em camelCase.
+- Constantes em UPPER_SNAKE_CASE.
+- Pacotes em letras minúsculas.
+- Identação consistente, preferencialmente com quatro espaços.
+- Imports organizados.
+- Classes com responsabilidades claras.
+- Métodos pequenos e objetivos.
+- Evitar duplicação.
+- Utilizar interfaces e abstrações quando justificadas.
+- Respeitar a orientação a objetos.
+- Manter lógica de negócio separada da interface.
+- Evitar código morto e comentários desnecessários.
+
+#### Organização
+
+- Cada arquivo deve ficar no diretório correspondente à sua responsabilidade.
+- Não misturar código Android com backend.
+- Não colocar lógica de negócio dentro de Activities, Fragments ou Controllers.
+- Não realizar consultas ao banco diretamente na interface.
+- Não espalhar configurações pelo código.
+- Não criar classes genéricas que concentrem responsabilidades distintas.
+- Não duplicar serviços ou componentes já existentes.
+- Não criar novas pastas sem necessidade técnica.
+- Não alterar a estrutura principal sem justificativa.
+
+#### Refatoração
+
+Antes de refatorar, o agente deverá compreender a implementação existente, verificar dependências e identificar os testes disponíveis.
+
+A refatoração deverá preservar o comportamento esperado, exceto quando houver solicitação explícita de mudança funcional.
+
+Priorize alterações pequenas, verificáveis e de fácil revisão.
+
+Não aproveite uma tarefa simples para reestruturar módulos inteiros sem necessidade.
+
+#### Comportamento do agente
+
+Antes de qualquer implementação:
+
+1. Ler o AGENTS.md e consultar os demais documentos relevantes.
+2. Entender o pedido.
+3. Identificar arquivos e módulos afetados.
+4. Analisar o código existente.
+5. Definir a alteração necessária.
+6. Implementar respeitando a arquitetura.
+7. Verificar dependências e possíveis impactos.
+8. Executar os testes possíveis.
+9. Atualizar a documentação quando necessário.
+10. Informar os resultados da alteração.
+
+#### Formatação das respostas
+
+Ao finalizar uma tarefa, apresentar um relatório objetivo contendo:
+
+- Objetivo da tarefa.
+- Alterações realizadas.
+- Arquivos modificados.
+- Testes e verificações.
+- Pendências, caso existam.
+
+Evitar respostas extensas para tarefas pequenas.
+
+Não misturar explicações técnicas, códigos e relatórios sem organização.
+
+Nunca afirmar que uma funcionalidade foi implementada ou testada sem que isso tenha ocorrido.
+
+#### Restrições
+
+O agente não poderá:
+
+- Apagar funcionalidades sem autorização.
+- Alterar regras de negócio não relacionadas à tarefa.
+- Inventar requisitos.
+- Adicionar dependências sem justificativa.
+- Expor senhas ou tokens.
+- Inserir credenciais no código.
+- Ignorar padrões de arquitetura.
+- Reorganizar arquivos de forma arbitrária.
+- Modificar estilos sem respeitar o STYLE.md.
+- Criar implementações fictícias.
+
+## 8. DOCUMENTAÇÃO COMPLEMENTAR
+
+Organize a documentação por assunto dentro do diretório `docs/`.
+
+Utilize a seguinte separação:
+
+- `docs/requisitos/`: requisitos e regras de negócio.
+- `docs/fluxos/`: diagramas e jornadas do usuário.
+- `docs/arquitetura/`: decisões e responsabilidades técnicas.
+- `docs/banco-de-dados/`: modelagem e migrations.
+- `docs/api/`: contratos e integrações.
+- `docs/funcionalidades/`: documentação por módulo.
+- `docs/alteracoes/`: histórico de decisões e mudanças relevantes.
+
+Não concentre toda a documentação em um único arquivo.
+
+Cada documento deverá ter um assunto claramente definido.
+
+Utilize links relativos no README para conectar a documentação complementar.
+
+Evite duplicação e documentos vazios sem finalidade.
+
+## 9. PLANEJAMENTO DO DESENVOLVIMENTO
+
+Apresente um planejamento técnico dividido em fases, considerando a análise do protótipo e as dependências identificadas.
+
+Considere inicialmente:
+
+**Fase 1 — Planejamento e arquitetura**
+
+Análise da documentação, levantamento de requisitos, definição dos fluxos e organização inicial do projeto.
+
+**Fase 2 — Configuração do ambiente**
+
+Preparação dos projetos Android, Spring Boot e MySQL.
+
+**Fase 3 — Modelagem e persistência**
+
+Definição de entidades, relacionamentos, migrations e repositories.
+
+**Fase 4 — Backend**
+
+Implementação de regras de negócio, serviços, validações, autenticação e endpoints.
+
+**Fase 5 — Android**
+
+Desenvolvimento de telas, ViewModels, navegação e comunicação com a API.
+
+**Fase 6 — Integrações**
+
+Implementação dos serviços externos, incluindo a integração de pagamentos Bex.
+
+**Fase 7 — Testes e validação**
+
+Testes unitários, testes de integração, validação de fluxos e correção de problemas.
+
+**Fase 8 — Preparação para produção**
+
+Revisão de configurações, segurança, documentação e procedimentos de publicação.
+
+Ajuste a sequência conforme as necessidades reais do Lavicameta.
+
+Defina as prioridades do MVP, os critérios de conclusão e as principais dependências.
+
+## 10. ESTRUTURA INICIAL DO PROJETO
+
+Crie efetivamente a seguinte estrutura, adaptando-a somente quando a documentação justificar:
+
+```text
+Lavicameta/
+│
+├── README.md
+├── AGENTS.md
+├── STYLE.md
+├── .gitignore
+│
+├── android/
+│   ├── settings.gradle
+│   ├── build.gradle
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── gradle/wrapper/
+│   └── app/
+│       ├── build.gradle
+│       └── src/
+│           ├── main/
+│           │   ├── AndroidManifest.xml
+│           │   ├── java/
+│           │   │   └── br/com/lavicameta/
+│           │   │       ├── ui/
+│           │   │       │   ├── activity/
+│           │   │       │   ├── fragment/
+│           │   │       │   ├── adapter/
+│           │   │       │   └── component/
+│           │   │       ├── viewmodel/
+│           │   │       ├── domain/
+│           │   │       │   ├── model/
+│           │   │       │   └── usecase/
+│           │   │       ├── data/
+│           │   │       │   ├── remote/
+│           │   │       │   ├── local/
+│           │   │       │   └── repository/
+│           │   │       └── util/
+│           │   └── res/
+│           │       ├── layout/
+│           │       ├── drawable/
+│           │       ├── mipmap/
+│           │       ├── values/
+│           │       └── xml/
+│           ├── test/
+│           └── androidTest/
+│
+├── backend/
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── java/
+│       │   │   └── br/com/lavicameta/
+│       │   │       ├── controller/
+│       │   │       ├── service/
+│       │   │       ├── repository/
+│       │   │       ├── entity/
+│       │   │       ├── dto/
+│       │   │       ├── config/
+│       │   │       ├── security/
+│       │   │       ├── integration/
+│       │   │       │   └── bex/
+│       │   │       ├── exception/
+│       │   │       └── util/
+│       │   └── resources/
+│       │       ├── application.yml
+│       │       └── db/migration/
+│       └── test/
+│
+├── database/
+│   ├── migrations/
+│   └── scripts/
+│
+└── docs/
+    ├── requisitos/
+    ├── fluxos/
+    ├── arquitetura/
+    ├── banco-de-dados/
+    ├── api/
+    ├── funcionalidades/
+    └── alteracoes/
+```
+
+Os arquivos essenciais de configuração devem ser válidos e compatíveis entre si.
+
+O projeto Android deverá conter a configuração mínima necessária para ser aberto no Android Studio.
+
+O backend deverá conter a configuração mínima de inicialização do Spring Boot, incluindo a classe principal da aplicação.
+
+Utilize versões estáveis e compatíveis de Java, Spring Boot, Android Gradle Plugin e demais dependências.
+
+Não coloque versões fictícias nem arquivos de configuração incompletos que impeçam a importação.
+
+Não duplique a responsabilidade das migrations entre `database/migrations` e `backend/src/main/resources/db/migration`. Defina um único local oficial para execução e utilize o outro apenas se houver justificativa documentada.
+
+Diretórios ainda vazios poderão conter arquivos `.gitkeep` para preservar sua estrutura.
+
+## 11. ENTREGA FINAL — LAVICAMETA.ZIP
+
+Após concluir a análise, a documentação e a preparação da estrutura inicial, gere uma pasta chamada:
+
+`Lavicameta/`
+
+Essa pasta deverá conter:
+
+1. `README.md` completo e organizado.
+2. `AGENTS.md` completo, com todas as regras obrigatórias para o agente de IA.
+3. `STYLE.md` estruturado, deixando a identidade visual pendente.
+4. `.gitignore` adequado às tecnologias utilizadas.
+5. Estrutura inicial do projeto Android.
+6. Estrutura inicial do backend Spring Boot.
+7. Organização para o banco de dados MySQL.
+8. Diretórios de documentação.
+9. Configurações mínimas para importação dos projetos.
+10. Arquivos necessários para preservar a estrutura inicial.
+
+### Validação obrigatória
+
+Antes de gerar o arquivo ZIP:
+
+- Verifique se os três arquivos Markdown existem e estão preenchidos.
+- Confirme a coerência entre a arquitetura documentada e as pastas criadas.
+- Valide os arquivos de configuração.
+- Verifique a integridade dos caminhos.
+- Confirme que nenhum segredo ou credencial foi incluído.
+- Execute verificações de build quando o ambiente permitir.
+- Registre qualquer verificação que não puder ser realizada.
+- Confirme que o arquivo compactado contém todos os diretórios e arquivos esperados.
+
+### Arquivo final
+
+Compacte todo o conteúdo em um único arquivo chamado:
+
+**Lavicameta.zip**
+
+O ZIP deverá conter a pasta `Lavicameta` como diretório principal, preservando a estrutura interna.
+
+Não entregue somente a documentação em texto ou uma representação da árvore de diretórios.
+
+Crie os arquivos e diretórios de verdade.
+
+### Resposta final
+
+Além de disponibilizar o arquivo `Lavicameta.zip`, apresente um resumo contendo:
+
+- Documentos e protótipos analisados.
+- Fluxos e requisitos identificados.
+- Arquitetura escolhida.
+- Tecnologias e versões definidas.
+- Estrutura criada.
+- Conteúdo e finalidade dos três documentos Markdown.
+- Verificações realizadas.
+- Pendências e próximas etapas.
+
+## 12. INSTRUÇÃO FINAL AO AGENTE
+
+O Lavicameta deverá ser desenvolvido de maneira organizada, com código orientado a objetos, responsabilidades bem distribuídas, documentação atualizada e estrutura de diretórios consistente.
+
+Não misture interface, regras de negócio, persistência, configurações e integrações externas.
+
+O `AGENTS.md` será a referência obrigatória de organização e comportamento para os agentes de IA.
+
+O `STYLE.md` será a referência visual, mesmo enquanto a identidade definitiva estiver pendente.
+
+O `README.md` será a apresentação e a documentação central do projeto.
+
+Nesta primeira entrega, não desenvolva o aplicativo completo. Prepare uma base técnica consistente, importável e documentada, respeitando os requisitos identificados no protótipo.
+
+**A entrega obrigatória é o arquivo `Lavicameta.zip`, contendo a pasta completa do projeto, os três arquivos Markdown e toda a estrutura inicial necessária para orientar o desenvolvimento futuro.**

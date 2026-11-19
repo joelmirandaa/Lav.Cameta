@@ -1,0 +1,1 @@
+O ambiente de geração não disponibilizou `gradle-wrapper.jar`. Antes de rodar `./gradlew`, em computador com Gradle 8.13 instalado execute `gradle wrapper --gradle-version 8.13`, o que cria o JAR oficial. Não usar artefato substituto inventado. O projeto ainda pode ser aberto e sincronizado pelo Android Studio, que pode configurar o wrapper.
