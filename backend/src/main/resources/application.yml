@@ -5,12 +5,63 @@ spring:
     url: ${DB_URL}
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+    hikari:
+      # Leituras após SELECT ... FOR UPDATE precisam enxergar commits concorrentes (reserva atômica, CT16).
+      transaction-isolation: TRANSACTION_READ_COMMITTED
   jpa:
     hibernate:
       ddl-auto: validate
     open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
   flyway:
     enabled: true
     locations: classpath:db/migration
+  mail:
+    host: ${MAIL_HOST:}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail.smtp.auth: ${MAIL_SMTP_AUTH:true}
+      mail.smtp.starttls.enable: ${MAIL_STARTTLS:true}
+
 server:
   port: ${PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+
+lavicameta:
+  zona-horaria: America/Belem
+  seguranca:
+    # Segredo HMAC (mínimo 32 bytes) para assinar os tokens de acesso. Obrigatório.
+    jwt-segredo: ${JWT_SECRET}
+    jwt-validade-minutos: ${JWT_TTL_MINUTES:720}
+    max-tentativas-login: 5
+    bloqueio-minutos: 15
+    # RF03: Client ID OAuth "Web" do Google usado pelo app Android. Vazio = login Google desativado.
+    google-client-id: ${GOOGLE_CLIENT_ID:}
+  admin-inicial:
+    # Cria o primeiro administrador se ainda não existir nenhum. Nunca versionar valores reais.
+    nome: ${ADMIN_BOOTSTRAP_NAME:Administrador}
+    email: ${ADMIN_BOOTSTRAP_EMAIL:}
+    senha: ${ADMIN_BOOTSTRAP_PASSWORD:}
+  recuperacao-senha:
+    remetente: ${MAIL_FROM:}
+    validade-minutos: 30
+    max-tentativas: 5
+  pedidos:
+    reserva-minutos: 5
+  pagamento:
+    # bex = provedor oficial (adaptador aguardando documentação); sandbox = homologação local.
+    provedor: ${PAYMENT_PROVIDER:bex}
+    webhook-segredo: ${PAYMENT_WEBHOOK_SECRET:}
+    url-publica: ${PUBLIC_BASE_URL:http://localhost:8080}
+  maquinas:
+    # hardware = adaptador real (aguardando protocolo); simulador = máquina simulada (PDF 10.2).
+    controlador: ${MACHINE_CONTROLLER:hardware}
+  agendador:
+    intervalo-ms: ${SCHEDULER_INTERVAL_MS:5000}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoNome"
+                style="@style/Lav.CampoLayout"
+                android:layout_marginTop="0dp"
+                android:hint="@string/campo_nome_maquina"
+                app:counterEnabled="true"
+                app:counterMaxLength="50">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nome"
+                    style="@style/Lav.CampoTexto"
+                    android:inputType="textCapSentences"
+                    android:maxLength="50" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:text="@string/campo_tipo"
+                android:textAppearance="@style/Lav.Texto.Rotulo" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_1"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tipoLavadora"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tipo_lavadora" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tipoSecadora"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tipo_secadora" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoCapacidade"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_capacidade">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/capacidade"
+                    style="@style/Lav.CampoTexto"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoRecursos"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_recursos"
+                app:counterEnabled="true"
+                app:counterMaxLength="200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/recursos"
+                    style="@style/Lav.CampoTexto"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="200" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/erro"
+                style="@style/Lav.Alerta.Erro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/salvar"
+                style="@style/Lav.BotaoPrincipal"
+                android:text="@string/acao_salvar" />
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/atualizar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:accessibilityHeading="true"
+                android:text="@string/carteira_titulo"
+                android:textAppearance="@style/Lav.Texto.H2" />
+
+            <include layout="@layout/view_estado" />
+
+            <LinearLayout
+                android:id="@+id/conteudo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Lav.Secao"
+                    android:text="@string/carteira_metodos" />
+
+                <LinearLayout
+                    android:id="@+id/metodos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    style="@style/Lav.Secao"
+                    android:text="@string/carteira_pagamentos" />
+
+                <LinearLayout
+                    android:id="@+id/pagamentos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

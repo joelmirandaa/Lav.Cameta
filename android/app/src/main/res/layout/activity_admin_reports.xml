@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T06 Relatórios – Mês / T07 Relatórios – Ano -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_secao"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/abas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aba_mes" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aba_ano" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <View style="@style/Lav.Divisor" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/atualizar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/periodo"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/escolher_periodo"
+                    app:icon="@drawable/ic_calendar" />
+
+                <include layout="@layout/view_estado" />
+
+                <LinearLayout
+                    android:id="@+id/conteudo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/rotuloGanhos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/Lav.Texto.Rotulo" />
+
+                            <TextView
+                                android:id="@+id/ganhos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textAppearance="@style/Lav.Texto.Valor" />
+
+                            <TextView
+                                android:id="@+id/variacao"
+                                style="@style/Lav.Selo"
+                                android:layout_marginTop="@dimen/espaco_1" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tituloGrafico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/Lav.Texto.Enfase" />
+
+                            <br.com.lavicameta.ui.component.ChartView
+                                android:id="@+id/grafico"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/altura_grafico"
+                                android:layout_marginTop="@dimen/espaco_2" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tituloResumo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/Lav.Texto.Enfase" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/espaco_2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/rotuloTotal"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+                                <TextView
+                                    android:id="@+id/total"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="@style/Lav.Texto.Enfase" />
+                            </LinearLayout>
+
+                            <View
+                                style="@style/Lav.Divisor"
+                                android:layout_marginTop="@dimen/espaco_1"
+                                android:layout_marginBottom="@dimen/espaco_1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/pagamentos_confirmados"
+                                    android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+                                <TextView
+                                    android:id="@+id/pagamentos"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="@style/Lav.Texto.Enfase" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/atualizadoEm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_2"
+                        android:gravity="center"
+                        android:textAppearance="@style/Lav.Texto.Auxiliar" />
+                </LinearLayout>
+            </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

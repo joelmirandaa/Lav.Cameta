@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T05 Acesso administrativo -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+            <ImageView
+                android:layout_width="@dimen/largura_logo"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/logo_descricao"
+                android:src="@drawable/logo_principal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:accessibilityHeading="true"
+                android:gravity="center"
+                android:text="@string/admin_titulo"
+                android:textAppearance="@style/Lav.Texto.H2" />
+
+            <TextView
+                style="@style/Lav.Alerta.Info"
+                android:drawableStart="@drawable/ic_shield"
+                android:text="@string/admin_restrito" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoIdentificador"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_usuario_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/identificador"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="username"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoSenha"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_senha"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/senha"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/erro"
+                style="@style/Lav.Alerta.Erro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/entrar"
+                style="@style/Lav.BotaoPrincipal"
+                android:text="@string/acao_entrar" />
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+</LinearLayout>

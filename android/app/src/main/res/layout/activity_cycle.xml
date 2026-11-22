@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Acompanhamento do ciclo (tela prevista, não prototipada; segue o guia de design). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <include layout="@layout/view_estado" />
+
+    <ScrollView
+        android:id="@+id/rolagem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout
+            style="@style/Lav.Formulario"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/icone"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:background="@drawable/bg_icone_maquina"
+                android:importantForAccessibility="no"
+                android:padding="24dp"
+                android:src="@drawable/ic_washing_machine"
+                app:tint="@color/agua" />
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:accessibilityHeading="true"
+                android:accessibilityLiveRegion="polite"
+                android:gravity="center"
+                android:textAppearance="@style/Lav.Texto.H2" />
+
+            <LinearLayout
+                android:id="@+id/painelTempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/minutos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Lav.Texto.Valor"
+                    android:textColor="@color/agua"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ciclo_restantes"
+                    android:textAppearance="@style/Lav.Texto.Auxiliar" />
+            </LinearLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progresso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:importantForAccessibility="no"
+                app:indicatorColor="@color/agua"
+                app:trackColor="@color/info_fundo"
+                app:trackCornerRadius="4dp"
+                app:trackThickness="8dp" />
+
+            <TextView
+                android:id="@+id/subtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:gravity="center"
+                android:textAppearance="@style/Lav.Texto" />
+
+            <TextView
+                android:id="@+id/maquina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_1"
+                android:gravity="center"
+                android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+            <TextView
+                android:id="@+id/aviso"
+                style="@style/Lav.Alerta.Aviso" />
+
+            <TextView
+                android:id="@+id/erro"
+                style="@style/Lav.Alerta.Erro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/iniciarSecagem"
+                style="@style/Lav.BotaoPrincipal"
+                android:text="@string/acao_iniciar_secagem"
+                android:visibility="gone"
+                app:icon="@drawable/ic_wind"
+                app:iconTint="@color/branco" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/voltarInicio"
+                style="@style/Lav.Botao.Secundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:text="@string/acao_voltar_inicio" />
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+</LinearLayout>

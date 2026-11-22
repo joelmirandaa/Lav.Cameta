@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T01 Login -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <br.com.lavicameta.ui.component.MaxWidthLinearLayout
+        style="@style/Lav.Formulario"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/espaco_6">
+
+        <ImageView
+            android:layout_width="@dimen/largura_logo"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/logo_descricao"
+            android:src="@drawable/logo_vertical" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_1"
+            android:gravity="center"
+            android:text="@string/slogan"
+            android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/campoIdentificador"
+            style="@style/Lav.CampoLayout"
+            android:layout_marginTop="@dimen/espaco_4"
+            android:hint="@string/campo_email_telefone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/identificador"
+                style="@style/Lav.CampoTexto"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/campoSenha"
+            style="@style/Lav.CampoLayout"
+            android:hint="@string/campo_senha"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/senha"
+                style="@style/Lav.CampoTexto"
+                android:autofillHints="password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/esqueceuSenha"
+            style="@style/Lav.Botao.Texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/esqueceu_senha" />
+
+        <TextView
+            android:id="@+id/erro"
+            style="@style/Lav.Alerta.Erro" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/entrar"
+            style="@style/Lav.BotaoPrincipal"
+            android:layout_marginTop="@dimen/espaco_2"
+            android:text="@string/acao_entrar" />
+
+        <LinearLayout
+            android:id="@+id/grupoGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:gravity="center"
+                android:text="@string/ou"
+                android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/entrarGoogle"
+                style="@style/Lav.Botao.Secundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:text="@string/entrar_google" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/espaco_3"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sem_conta"
+                android:textAppearance="@style/Lav.Texto" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cadastrar"
+                style="@style/Lav.Botao.Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cadastre_se" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/acessoAdmin"
+            style="@style/Lav.Botao.Texto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/acesso_administrativo"
+            android:textColor="@color/texto_secundario"
+            app:icon="@drawable/ic_shield"
+            app:iconTint="@color/texto_secundario" />
+    </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+</ScrollView>

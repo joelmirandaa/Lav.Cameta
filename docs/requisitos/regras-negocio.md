@@ -19,7 +19,7 @@ Origem: PDF seção 4, página 6. Todas **Confirmado**. IDs RN001–RN013 equiva
 | RN013 | Um pedido possui exatamente um pagamento aprovado. |
 
 ## Atenções
-- **Pendente:** RN008 conflita com pedido apontando para só uma máquina e no máximo um ciclo; requer redesign de segmentos de ciclo.
-- **Pendente:** RN010 é indefinida se período anterior = 0; mostrar “sem base comparável” até decisão de produto.
-- **Proposto:** idempotência de pagamento e início de ciclo; trava transacional de máquina; estados explícitos RESERVADA e OFFLINE na persistência sem mudar estados públicos até validação.
+- **Implementado (Proposto):** RN008 resolvido com etapas de ciclo (pedido 1—N ciclos, um por etapa); ver AD-010.
+- **Implementado:** RN010 com período anterior = 0 retorna variação nula e o app exibe “sem base comparável”.
+- **Implementado:** idempotência de pagamento e de início de ciclo; trava transacional da máquina. A reserva é exposta como indicador `reservada`, sem novo status persistido.
 - **Inconsistência do PDF:** CT03 referencia RN12 mas descreve bloqueio após 5 tentativas; CT16 menciona RN15 inexistente; CT24 referencia RN13 mas fala de cartão. Corrigir rastreabilidade antes da execução dos testes.

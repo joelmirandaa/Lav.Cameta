@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/acao_periodo" android:icon="@drawable/ic_calendar"
+        android:title="@string/escolher_periodo" app:showAsAction="always" />
+    <item android:id="@+id/acao_maquinas" android:icon="@drawable/ic_washing_machine"
+        android:title="@string/menu_maquinas_precos" app:showAsAction="ifRoom" />
+    <item android:id="@+id/acao_precos" android:icon="@drawable/ic_settings"
+        android:title="@string/menu_precos" app:showAsAction="ifRoom" />
+    <item android:id="@+id/acao_sair" android:icon="@drawable/ic_log_out"
+        android:title="@string/acao_sair" app:showAsAction="never" />
+</menu>

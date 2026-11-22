@@ -1,1 +1,22 @@
-<resources><color name="base_text">#1C1B1F</color><color name="base_background">#FFFFFF</color></resources>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paleta oficial — docs/lav-cameta-guia-de-design.md, seção 3. Não usar cores fora daqui. -->
+<resources>
+    <color name="marinho">#0B2A4A</color>
+    <color name="agua">#1F6FD1</color>
+    <color name="agua_escuro">#185BB0</color>
+    <color name="destaque">#6EC6F5</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="fundo_secao">#F3F8FD</color>
+    <color name="texto">#0B2A4A</color>
+    <color name="texto_secundario">#4A5D73</color>
+    <color name="borda">#D6E3F0</color>
+    <color name="sucesso">#1E7F50</color>
+    <color name="alerta">#B26B00</color>
+    <color name="erro">#C62828</color>
+    <color name="info">#1F6FD1</color>
+    <!-- Fundos claros dos estados (alertas: "fundo claro da cor do estado"). -->
+    <color name="sucesso_fundo">#E7F4ED</color>
+    <color name="alerta_fundo">#FBF1E0</color>
+    <color name="erro_fundo">#FBEAEA</color>
+    <color name="info_fundo">#E8F0F8</color>
+</resources>

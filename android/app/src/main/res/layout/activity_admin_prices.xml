@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+            <TextView
+                style="@style/Lav.Alerta.Info"
+                android:layout_marginTop="0dp"
+                android:text="@string/admin_precos_ajuda" />
+
+            <include layout="@layout/view_estado" />
+
+            <LinearLayout
+                android:id="@+id/servicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+</LinearLayout>

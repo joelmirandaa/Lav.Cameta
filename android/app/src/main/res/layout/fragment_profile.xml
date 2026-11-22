@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="@string/perfil_titulo"
+            android:textAppearance="@style/Lav.Texto.H2" />
+
+        <include layout="@layout/view_estado" />
+
+        <LinearLayout
+            android:id="@+id/conteudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Lav.Secao"
+                android:text="@string/perfil_dados" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoNome"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_nome">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nome"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="name"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLength="120" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoEmail"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="emailAddress"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="150" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoTelefone"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_telefone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/telefone"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="phone"
+                    android:inputType="phone"
+                    android:maxLength="20" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/mensagemPerfil"
+                style="@style/Lav.Alerta.Erro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/salvar"
+                style="@style/Lav.BotaoPrincipal"
+                android:text="@string/acao_salvar" />
+
+            <TextView
+                style="@style/Lav.Secao"
+                android:layout_marginTop="@dimen/espaco_4"
+                android:text="@string/perfil_senha" />
+
+            <TextView
+                android:id="@+id/semSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/perfil_definir_senha"
+                android:textAppearance="@style/Lav.Texto.Auxiliar"
+                android:visibility="gone" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoSenhaAtual"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/perfil_senha_atual"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/senhaAtual"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="password"
+                    android:inputType="textPassword"
+                    android:maxLength="72" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoNovaSenha"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/campo_nova_senha"
+                app:endIconMode="password_toggle"
+                app:helperText="@string/ajuda_senha">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/novaSenha"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="newPassword"
+                    android:inputType="textPassword"
+                    android:maxLength="72" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/campoConfirmacao"
+                style="@style/Lav.CampoLayout"
+                android:hint="@string/perfil_confirmar_nova"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmacao"
+                    style="@style/Lav.CampoTexto"
+                    android:autofillHints="newPassword"
+                    android:inputType="textPassword"
+                    android:maxLength="72" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/mensagemSenha"
+                style="@style/Lav.Alerta.Erro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/alterarSenha"
+                style="@style/Lav.Botao.Secundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:text="@string/acao_alterar_senha" />
+
+            <View
+                style="@style/Lav.Divisor"
+                android:layout_marginTop="@dimen/espaco_4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sair"
+                style="@style/Lav.Botao.Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_2"
+                android:text="@string/acao_sair"
+                android:textColor="@color/erro"
+                app:icon="@drawable/ic_log_out"
+                app:iconTint="@color/erro" />
+        </LinearLayout>
+    </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+</ScrollView>

@@ -1,1 +1,237 @@
-<resources><string name="app_name">Lavicameta</string><string name="setup_message">Estrutura inicial pronta. Fluxos de cliente e administrador serão desenvolvidos nas próximas etapas.</string></resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">lav.cametá</string>
+    <string name="logo_descricao">lav.cametá</string>
+    <string name="slogan">Praticidade para o seu dia a dia</string>
+
+    <!-- Ações comuns -->
+    <string name="acao_entrar">Entrar</string>
+    <string name="acao_voltar">Voltar</string>
+    <string name="acao_continuar">Continuar</string>
+    <string name="acao_tentar_novamente">Tentar novamente</string>
+    <string name="acao_salvar">Salvar</string>
+    <string name="acao_cancelar">Cancelar</string>
+    <string name="acao_sair">Sair</string>
+    <string name="acao_ok">Ok</string>
+    <string name="acao_remover">Remover</string>
+    <string name="carregando">Carregando…</string>
+
+    <!-- Erros de campo -->
+    <string name="erro_obrigatorio">Preencha este campo.</string>
+    <string name="erro_email">E-mail inválido.</string>
+    <string name="erro_telefone">Telefone inválido. Use DDD e número.</string>
+    <string name="erro_senha_fraca">Use de 8 a 72 caracteres, com letras e números.</string>
+    <string name="erro_contato">Informe e-mail ou telefone.</string>
+    <string name="erro_senhas_diferentes">As senhas não conferem.</string>
+    <string name="erro_numero">Valor inválido.</string>
+    <string name="erro_muito_longo">Texto muito longo.</string>
+    <string name="erro_preco_duracao">Informe preço (até 2 casas) e duração de 1 a 600 min.</string>
+
+    <!-- T01 Login -->
+    <string name="campo_email_telefone">E-mail ou telefone</string>
+    <string name="campo_senha">Senha</string>
+    <string name="esqueceu_senha">Esqueceu sua senha?</string>
+    <string name="entrar_google">Entrar com Google</string>
+    <string name="sem_conta">Ainda não tem conta?</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="acesso_administrativo">Acesso administrativo</string>
+    <string name="ou">ou</string>
+    <string name="google_falhou">Não foi possível entrar com o Google. Tente novamente.</string>
+    <string name="google_sem_conta">Nenhuma conta Google encontrada neste aparelho.</string>
+    <string name="sessao_expirada">Sua sessão terminou. Entre novamente.</string>
+
+    <!-- Cadastro -->
+    <string name="cadastro_titulo">Criar conta</string>
+    <string name="cadastro_subtitulo">Informe e-mail ou telefone para entrar depois.</string>
+    <string name="campo_nome">Nome completo</string>
+    <string name="campo_email">E-mail</string>
+    <string name="campo_telefone">Telefone</string>
+    <string name="campo_confirmar_senha">Confirmar senha</string>
+    <string name="ajuda_senha">Mínimo de 8 caracteres, com letras e números.</string>
+    <string name="acao_criar_conta">Criar conta</string>
+
+    <!-- Recuperação -->
+    <string name="recuperar_titulo">Recuperar senha</string>
+    <string name="recuperar_instrucao">Informe o e-mail da sua conta. Vamos enviar um código para criar uma nova senha.</string>
+    <string name="acao_enviar_codigo">Enviar código</string>
+    <string name="recuperar_codigo_enviado">Se o e-mail %1$s estiver cadastrado, você receberá um código em instantes.</string>
+    <string name="campo_codigo">Código recebido</string>
+    <string name="campo_nova_senha">Nova senha</string>
+    <string name="acao_redefinir">Redefinir senha</string>
+    <string name="acao_reenviar">Usar outro e-mail ou reenviar</string>
+    <string name="recuperar_concluido">Senha alterada. Entre com a nova senha.</string>
+    <string name="acao_ir_login">Ir para o login</string>
+
+    <!-- T02 Máquinas -->
+    <string name="maquinas_titulo">Escolha uma máquina</string>
+    <string name="ola_nome">Olá, %1$s</string>
+    <string name="filtro_lavar">Lavar</string>
+    <string name="filtro_secar">Secar</string>
+    <string name="filtro_ambos">Ambos</string>
+    <string name="maquinas_vazio">Nenhuma máquina cadastrada para este filtro.</string>
+    <string name="status_disponivel">Disponível</string>
+    <string name="status_em_uso">Em uso</string>
+    <string name="status_em_uso_minutos">Em uso · %1$d min restantes</string>
+    <string name="status_manutencao">Manutenção</string>
+    <string name="status_reservada">Reservada</string>
+    <string name="tipo_lavadora">Lavadora</string>
+    <string name="tipo_secadora">Secadora</string>
+    <string name="maquina_indisponivel_toque">%1$s não está disponível agora. Escolha outra máquina.</string>
+    <string name="nav_inicio">Início</string>
+    <string name="nav_historico">Histórico</string>
+    <string name="nav_carteira">Carteira</string>
+    <string name="nav_perfil">Perfil</string>
+
+    <!-- T03 Detalhe -->
+    <string name="detalhe_capacidade">Capacidade</string>
+    <string name="detalhe_recursos">Recursos</string>
+    <string name="detalhe_escolha_servico">Escolha o serviço</string>
+    <string name="detalhe_indisponivel">Esta máquina não aceita novos pedidos agora.</string>
+    <string name="detalhe_reserva_aviso">Ao continuar, a máquina fica reservada por 5 minutos enquanto você paga.</string>
+    <string name="servico_lavar">Lavar</string>
+    <string name="servico_secar">Secar</string>
+    <string name="servico_lavar_secar">Lavar + Secar</string>
+    <string name="servico_duracao">%1$d min</string>
+    <string name="sem_recursos">Sem recursos informados.</string>
+
+    <!-- T04 Pagamento -->
+    <string name="pagamento_titulo">Pagamento</string>
+    <string name="pagamento_resumo">Resumo do pedido</string>
+    <string name="pagamento_total">Total</string>
+    <string name="pagamento_escolha">Como você quer pagar?</string>
+    <string name="metodo_pix">PIX</string>
+    <string name="metodo_credito">Cartão de crédito</string>
+    <string name="metodo_debito">Cartão de débito</string>
+    <string name="metodo_credito_curto">Crédito</string>
+    <string name="metodo_debito_curto">Débito</string>
+    <string name="acao_gerar_pix">Gerar PIX</string>
+    <string name="acao_pagar_cartao">Pagar com cartão</string>
+    <string name="pix_instrucao">Escaneie o QR Code ou copie o código e pague no app do seu banco.</string>
+    <string name="pix_copiar">Copiar código</string>
+    <string name="pix_copiado">Código PIX copiado.</string>
+    <string name="pix_qr_descricao">QR Code do PIX no valor de %1$s</string>
+    <string name="cartao_instrucao">Você será levado ao ambiente seguro do pagamento. Nenhum dado de cartão fica no aplicativo.</string>
+    <string name="acao_abrir_checkout">Abrir pagamento seguro</string>
+    <string name="pagamento_aguardando">Aguardando confirmação do pagamento…</string>
+    <string name="pagamento_inicio_automatico">Assim que o pagamento for confirmado, a máquina começa sozinha.</string>
+    <string name="pagamento_tempo_restante">Pague em até %1$s</string>
+    <string name="pagamento_recusado_msg">Pagamento recusado. Tente outra forma de pagamento.</string>
+    <string name="pagamento_expirado_titulo">Tempo esgotado</string>
+    <string name="pagamento_expirado_msg">O PIX expirou e a máquina foi liberada. Volte e refaça o pedido.</string>
+    <string name="pagamento_cancelado_msg">Pedido cancelado. A máquina foi liberada.</string>
+    <string name="pagamento_cancelar_titulo">Cancelar pedido?</string>
+    <string name="pagamento_cancelar_msg">A reserva da máquina será liberada.</string>
+    <string name="pagamento_cancelar_confirma">Cancelar pedido</string>
+    <string name="pagamento_continuar">Continuar pagando</string>
+
+    <!-- Acompanhamento -->
+    <string name="ciclo_titulo">Acompanhamento</string>
+    <string name="ciclo_em_andamento">%1$s em andamento</string>
+    <string name="ciclo_minutos">%1$d min</string>
+    <string name="ciclo_restantes">restantes</string>
+    <string name="ciclo_termina_as">Previsão de término às %1$s</string>
+    <string name="ciclo_iniciando">Pagamento confirmado. Iniciando a máquina…</string>
+    <string name="ciclo_concluido">Pronto! Seu serviço terminou.</string>
+    <string name="ciclo_concluido_msg">Retire suas roupas. A máquina já está disponível para outra pessoa.</string>
+    <string name="ciclo_lavagem_concluida">Lavagem concluída</string>
+    <string name="ciclo_secagem_instrucao">Coloque as roupas na secadora indicada após tocar em Iniciar secagem.</string>
+    <string name="acao_iniciar_secagem">Iniciar secagem</string>
+    <string name="ciclo_estornado">Não foi possível iniciar a máquina. O estorno integral foi solicitado.</string>
+    <string name="ciclo_estornado_ajuda">Se o valor não aparecer na sua conta em breve, procure o atendimento da lavanderia.</string>
+    <string name="acao_voltar_inicio">Voltar ao início</string>
+    <string name="etapa_lavagem">Lavagem</string>
+    <string name="etapa_secagem">Secagem</string>
+    <string name="ciclo_maquina">Máquina: %1$s</string>
+    <string name="notificacao_canal">Ciclos</string>
+    <string name="notificacao_canal_descricao">Avisos de fim de lavagem e secagem</string>
+    <string name="notificacao_concluido">Seu serviço terminou</string>
+    <string name="notificacao_lavagem">Lavagem concluída: inicie a secagem</string>
+
+    <!-- Histórico -->
+    <string name="historico_titulo">Histórico</string>
+    <string name="historico_vazio">Você ainda não fez nenhum pedido.</string>
+    <string name="pedido_aguardando">Aguardando pagamento</string>
+    <string name="pedido_pago">Pago</string>
+    <string name="pedido_andamento">Em andamento</string>
+    <string name="pedido_concluido">Concluído</string>
+    <string name="pedido_cancelado">Cancelado</string>
+    <string name="pedido_expirado">Expirado</string>
+    <string name="pedido_estornado">Estornado</string>
+
+    <!-- Carteira -->
+    <string name="carteira_titulo">Carteira</string>
+    <string name="carteira_metodos">Formas de pagamento salvas</string>
+    <string name="carteira_metodos_vazio">Nenhum cartão salvo. Cartões só são guardados pelo gateway, de forma tokenizada.</string>
+    <string name="carteira_pagamentos">Pagamentos</string>
+    <string name="carteira_pagamentos_vazio">Nenhum pagamento ainda.</string>
+    <string name="carteira_cartao_final">%1$s final %2$s</string>
+    <string name="carteira_remover_titulo">Remover forma de pagamento?</string>
+    <string name="pagamento_pendente">Pendente</string>
+    <string name="pagamento_aprovado">Aprovado</string>
+    <string name="pagamento_recusado">Recusado</string>
+    <string name="pagamento_expirado">Expirado</string>
+    <string name="pagamento_estorno_pendente">Estorno em andamento</string>
+    <string name="pagamento_estornado">Estornado</string>
+
+    <!-- Perfil -->
+    <string name="perfil_titulo">Perfil</string>
+    <string name="perfil_dados">Seus dados</string>
+    <string name="perfil_senha">Senha</string>
+    <string name="perfil_senha_atual">Senha atual</string>
+    <string name="perfil_confirmar_nova">Confirmar nova senha</string>
+    <string name="perfil_salvo">Dados atualizados.</string>
+    <string name="perfil_senha_alterada">Senha alterada.</string>
+    <string name="perfil_definir_senha">Você entrou com Google. Defina uma senha para entrar também com e-mail.</string>
+    <string name="acao_alterar_senha">Alterar senha</string>
+    <string name="sair_confirmar">Deseja sair da sua conta?</string>
+
+    <!-- T05 Admin -->
+    <string name="admin_titulo">Administrador</string>
+    <string name="admin_restrito">Acesso restrito à administração da lavanderia.</string>
+    <string name="campo_usuario_email">Usuário ou e-mail</string>
+
+    <!-- T06/T07 Relatórios -->
+    <string name="relatorios_titulo">Relatórios</string>
+    <string name="aba_mes">Mês</string>
+    <string name="aba_ano">Ano</string>
+    <string name="ganhos_mes">Ganhos do mês</string>
+    <string name="ganhos_ano">Ganhos do ano</string>
+    <string name="variacao_vs_mes">%1$s vs. mês anterior</string>
+    <string name="variacao_vs_ano">%1$s vs. ano anterior</string>
+    <string name="variacao_sem_base">Sem base comparável no período anterior</string>
+    <string name="grafico_semanas">Ganhos por semana</string>
+    <string name="grafico_meses">Ganhos por mês</string>
+    <string name="resumo_mes">Resumo do mês</string>
+    <string name="resumo_ano">Resumo anual</string>
+    <string name="total_mes">Total do mês</string>
+    <string name="total_ano">Total do ano</string>
+    <string name="pagamentos_confirmados">Pagamentos confirmados</string>
+    <string name="pagamentos_quantidade">%1$s · %2$d pagamento(s)</string>
+    <string name="atualizado_em">Atualizado em %1$s</string>
+    <string name="escolher_periodo">Escolher período</string>
+    <string name="campo_mes">Mês</string>
+    <string name="campo_ano">Ano</string>
+    <string name="grafico_descricao">Gráfico de ganhos: %1$s</string>
+    <string name="menu_maquinas_precos">Máquinas</string>
+    <string name="menu_precos">Preços</string>
+
+    <!-- Gestão de máquinas e preços -->
+    <string name="admin_maquinas_titulo">Máquinas</string>
+    <string name="admin_maquinas_vazio">Nenhuma máquina cadastrada. Toque em Nova máquina.</string>
+    <string name="acao_nova_maquina">Nova máquina</string>
+    <string name="acao_editar">Editar</string>
+    <string name="acao_colocar_manutencao">Manutenção</string>
+    <string name="acao_liberar">Liberar</string>
+    <string name="admin_form_novo">Nova máquina</string>
+    <string name="admin_form_editar">Editar máquina</string>
+    <string name="campo_nome_maquina">Nome da máquina</string>
+    <string name="campo_tipo">Tipo</string>
+    <string name="campo_capacidade">Capacidade (kg)</string>
+    <string name="campo_recursos">Recursos (separados por vírgula)</string>
+    <string name="admin_maquina_salva">Máquina salva.</string>
+    <string name="admin_precos_titulo">Preços e duração</string>
+    <string name="admin_precos_ajuda">Novos preços valem para pedidos futuros. Pedidos já criados mantêm o valor.</string>
+    <string name="campo_preco">Preço (R$)</string>
+    <string name="campo_duracao">Duração (min)</string>
+    <string name="admin_preco_salvo">Preço atualizado.</string>
+</resources>

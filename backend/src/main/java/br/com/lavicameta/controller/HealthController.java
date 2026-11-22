@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HealthController {
     @GetMapping
     public Map<String, String> health() {
-        return Map.of("status", "UP", "scope", "technical-skeleton");
+        return Map.of("status", "UP");
     }
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cartao"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/espaco_1"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icone"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_icone_maquina"
+            android:importantForAccessibility="no"
+            android:padding="14dp"
+            android:src="@drawable/ic_washing_machine"
+            app:tint="@color/marinho" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/espaco_2"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Lav.Texto.Enfase" />
+
+            <TextView
+                android:id="@+id/descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+            <TextView
+                android:id="@+id/status"
+                style="@style/Lav.Selo"
+                android:layout_marginTop="@dimen/espaco_1" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/seta"
+            android:layout_width="@dimen/icone"
+            android:layout_height="@dimen/icone"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/texto_secundario" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T03 Detalhe da máquina -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <include layout="@layout/view_estado" />
+
+    <ScrollView
+        android:id="@+id/rolagem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icone"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/bg_icone_maquina"
+                    android:importantForAccessibility="no"
+                    android:padding="18dp"
+                    android:src="@drawable/ic_washing_machine"
+                    app:tint="@color/marinho" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/espaco_2"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:accessibilityHeading="true"
+                        android:textAppearance="@style/Lav.Texto.H2" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        style="@style/Lav.Selo"
+                        android:layout_marginTop="@dimen/espaco_1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detalhe_capacidade"
+                        android:textAppearance="@style/Lav.Texto.Rotulo" />
+
+                    <TextView
+                        android:id="@+id/capacidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Lav.Texto.H3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_2"
+                        android:text="@string/detalhe_recursos"
+                        android:textAppearance="@style/Lav.Texto.Rotulo" />
+
+                    <TextView
+                        android:id="@+id/recursos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="@style/Lav.Texto" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/Lav.Secao"
+                android:text="@string/detalhe_escolha_servico" />
+
+            <LinearLayout
+                android:id="@+id/servicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/indisponivel"
+                style="@style/Lav.Alerta.Aviso"
+                android:text="@string/detalhe_indisponivel" />
+
+            <TextView
+                android:id="@+id/erro"
+                style="@style/Lav.Alerta.Erro" />
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+
+    <View style="@style/Lav.Divisor" />
+
+    <br.com.lavicameta.ui.component.MaxWidthLinearLayout
+        android:id="@+id/rodape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/margem_tela"
+        app:larguraMaxima="@dimen/largura_maxima_conteudo">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detalhe_reserva_aviso"
+            android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continuar"
+            style="@style/Lav.BotaoPrincipal"
+            android:layout_marginTop="@dimen/espaco_2"
+            android:enabled="false"
+            android:text="@string/acao_continuar" />
+    </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+</LinearLayout>

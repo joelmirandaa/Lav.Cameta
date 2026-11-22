@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- T04 Pagamento -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/barra" layout="@layout/toolbar" />
+
+    <include layout="@layout/view_estado" />
+
+    <ScrollView
+        android:id="@+id/rolagem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <br.com.lavicameta.ui.component.MaxWidthLinearLayout style="@style/Lav.Formulario">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pagamento_resumo"
+                        android:textAppearance="@style/Lav.Texto.Rotulo" />
+
+                    <TextView
+                        android:id="@+id/resumoServico"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/espaco_1"
+                        android:textAppearance="@style/Lav.Texto.H3" />
+
+                    <TextView
+                        android:id="@+id/resumoMaquina"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Lav.Texto.Auxiliar" />
+
+                    <View
+                        style="@style/Lav.Divisor"
+                        android:layout_marginTop="@dimen/espaco_2"
+                        android:layout_marginBottom="@dimen/espaco_2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/pagamento_total"
+                            android:textAppearance="@style/Lav.Texto.Enfase" />
+
+                        <TextView
+                            android:id="@+id/total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Lav.Texto.H2" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tempo"
+                style="@style/Lav.Alerta.Info"
+                android:accessibilityLiveRegion="none" />
+
+            <TextView
+                style="@style/Lav.Secao"
+                android:text="@string/pagamento_escolha" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/metodos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:checkedButton="@+id/metodoPix"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/metodoPix"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/metodo_pix" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/metodoCredito"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/metodo_credito_curto" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/metodoDebito"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/metodo_debito_curto" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/erro"
+                style="@style/Lav.Alerta.Erro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/gerar"
+                style="@style/Lav.BotaoPrincipal"
+                android:text="@string/acao_gerar_pix" />
+
+            <!-- PIX gerado -->
+            <LinearLayout
+                android:id="@+id/painelPix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pix_instrucao"
+                    android:textAppearance="@style/Lav.Texto" />
+
+                <ImageView
+                    android:id="@+id/qrCode"
+                    android:contentDescription="@string/metodo_pix"
+                    android:layout_width="@dimen/qr_code"
+                    android:layout_height="@dimen/qr_code"
+                    android:layout_marginTop="@dimen/espaco_2"
+                    android:background="@drawable/bg_qr"
+                    android:padding="@dimen/espaco_1"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/codigoPix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espaco_2"
+                    android:background="@drawable/bg_icone_maquina"
+                    android:fontFamily="monospace"
+                    android:maxLines="3"
+                    android:ellipsize="middle"
+                    android:padding="@dimen/espaco_2"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/texto_auxiliar"
+                    android:textColor="@color/texto" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/copiar"
+                    style="@style/Lav.Botao.Secundario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espaco_2"
+                    android:text="@string/pix_copiar"
+                    app:icon="@drawable/ic_copy" />
+            </LinearLayout>
+
+            <!-- Cartão: checkout externo seguro -->
+            <LinearLayout
+                android:id="@+id/painelCartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cartao_instrucao"
+                    android:textAppearance="@style/Lav.Texto" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/abrirCheckout"
+                    style="@style/Lav.BotaoPrincipal"
+                    android:layout_marginTop="@dimen/espaco_2"
+                    android:text="@string/acao_abrir_checkout"
+                    app:icon="@drawable/ic_credit_card"
+                    app:iconTint="@color/branco" />
+            </LinearLayout>
+
+            <!-- Pagamento iniciado: em análise pelo backend -->
+            <LinearLayout
+                android:id="@+id/painelAguardando"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:importantForAccessibility="no"
+                    android:indeterminate="true"
+                    app:indicatorSize="24dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/espaco_2"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:accessibilityLiveRegion="polite"
+                        android:text="@string/pagamento_aguardando"
+                        android:textAppearance="@style/Lav.Texto.Enfase" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pagamento_inicio_automatico"
+                        android:textAppearance="@style/Lav.Texto.Auxiliar" />
+                </LinearLayout>
+            </LinearLayout>
+        </br.com.lavicameta.ui.component.MaxWidthLinearLayout>
+    </ScrollView>
+</LinearLayout>

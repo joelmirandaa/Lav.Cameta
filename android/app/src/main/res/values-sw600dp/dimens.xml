@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tablets: margens e títulos maiores (guia, seções 4 e 8). -->
+<resources>
+    <dimen name="margem_tela">32dp</dimen>
+    <dimen name="padding_card">24dp</dimen>
+    <dimen name="texto_h1">40sp</dimen>
+    <dimen name="texto_h2">32sp</dimen>
+    <dimen name="texto_h3">24sp</dimen>
+    <dimen name="largura_logo">260dp</dimen>
+</resources>

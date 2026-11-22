@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Grid de cartões 1 → 2 → 3 colunas (guia, seção 5 "Cartões"). -->
+<resources>
+    <integer name="colunas_maquinas">1</integer>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Escala de 8 dp e medidas de componentes do guia de design (seções 5 e 8). -->
+<resources>
+    <dimen name="espaco_1">8dp</dimen>
+    <dimen name="espaco_2">16dp</dimen>
+    <dimen name="espaco_3">24dp</dimen>
+    <dimen name="espaco_4">32dp</dimen>
+    <dimen name="espaco_6">48dp</dimen>
+    <dimen name="margem_tela">16dp</dimen>
+    <dimen name="largura_maxima_conteudo">600dp</dimen>
+    <dimen name="raio_pequeno">8dp</dimen>
+    <dimen name="raio">12dp</dimen>
+    <dimen name="raio_grande">16dp</dimen>
+    <dimen name="altura_controle">48dp</dimen>
+    <dimen name="altura_cabecalho">64dp</dimen>
+    <dimen name="padding_card">16dp</dimen>
+    <dimen name="icone">24dp</dimen>
+    <dimen name="texto_h1">32sp</dimen>
+    <dimen name="texto_h2">26sp</dimen>
+    <dimen name="texto_h3">20sp</dimen>
+    <dimen name="texto_corpo">16sp</dimen>
+    <dimen name="texto_auxiliar">14sp</dimen>
+    <dimen name="texto_minimo">12sp</dimen>
+    <dimen name="largura_logo">200dp</dimen>
+    <dimen name="qr_code">220dp</dimen>
+    <dimen name="altura_grafico">200dp</dimen>
+</resources>

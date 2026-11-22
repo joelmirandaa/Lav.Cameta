@@ -1,0 +1,18 @@
+# Somente desenvolvimento local: MySQL 8.4 na porta 3307 (evita conflito com MySQL/MariaDB do host).
+# Credenciais lidas de backend/.env (não versionado). Produção usa banco gerenciado próprio.
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: lavicameta-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: lavicameta
+      MYSQL_USER: ${DB_USERNAME:-lavicameta}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?defina DB_PASSWORD em backend/.env}
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - lavicameta-mysql:/var/lib/mysql
+volumes:
+  lavicameta-mysql:

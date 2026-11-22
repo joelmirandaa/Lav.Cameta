@@ -27,19 +27,19 @@ flowchart LR
  B <--> C[T07 Relatório anual]
  B --> D[Escolha período]
  C --> D
- B --> E[Gestão máquinas e preços: tela pendente]
+ B --> E[Gestão de máquinas e preços]
  C --> E
 ```
 
 ## Matriz fluxo → sistema
-| Fluxo | Telas | Endpoints planejados, não implementados | Entidades | Regras |
+| Fluxo | Telas | Endpoints (implementados) | Entidades | Regras |
 |---|---|---|---|---|
-| Autenticar | T01, Cadastro, Recuperação | `/auth/*` | usuarios | RN011, RN012 |
+| Autenticar | T01, Cadastro, Recuperação | `/auth/*` | usuarios, codigos_recuperacao_senha | UC02 (bloqueio) |
 | Consultar | T02, T03 | `GET /machines`, `GET /machines/{id}` | maquinas, servicos | RN002, RN007 |
 | Reservar | T03, T04 | `POST /orders` | pedidos, maquinas | RN001, RN003, RN005, RN008 |
-| Pagar | T04 | `POST /orders/{id}/checkout`, webhook a definir | pagamentos, pedidos | RN004, RN013 |
-| Iniciar/acompanhar | Acompanhamento | `GET /orders/{id}/cycle` | ciclos, maquinas | RN004, RN006 |
-| Relatórios | T05–T07 | `GET /admin/reports` | pedidos, pagamentos | RN009–RN011 |
-| Administração | Não prototipada | `GET/PUT /admin/machines` | maquinas, servicos | RN001, RN007 |
+| Pagar | T04 | `POST /orders/{id}/checkout`, `POST /payments/webhook/{provedor}` | pagamentos, eventos_pagamento, pedidos | RN004, RN013 |
+| Iniciar/acompanhar | Acompanhamento | `GET /orders/{id}`, `POST /orders/{id}/drying` | ciclos, comandos_maquina, maquinas | RN004, RN006, RN008 |
+| Relatórios | T05–T07 | `POST /admin/auth/login`, `GET /admin/reports` | pedidos, pagamentos | RN009–RN011 |
+| Administração | Máquinas, Preços | `/admin/machines`, `/admin/services` | maquinas, servicos | RN001, RN007 |
 
-Endpoints são **propostos** e exigem revisão da autenticação, versão e integração Bex.
+Contratos detalhados em [api/contratos.md](../api/contratos.md). O webhook Bex depende da documentação do provedor.
