@@ -104,7 +104,7 @@ public class CycleActivity extends BaseActivity {
         b.iniciarSecagem.setVisibility(View.GONE);
         b.aviso.setVisibility(View.GONE);
         b.icone.setImageResource(ciclo != null && "SECAGEM".equals(ciclo.etapa) ? R.drawable.ic_wind : R.drawable.ic_washing_machine);
-        b.icone.setImageTintList(ContextCompat.getColorStateList(this, R.color.agua));
+        b.icone.setImageTintList(ContextCompat.getColorStateList(this, R.color.roxo));
         b.maquina.setText(ciclo == null ? getString(R.string.ciclo_maquina, p.maquinaNome)
                 : getString(R.string.ciclo_maquina, ciclo.maquinaNome));
 

@@ -28,7 +28,7 @@
                 android:importantForAccessibility="no"
                 android:padding="24dp"
                 android:src="@drawable/ic_washing_machine"
-                app:tint="@color/agua" />
+                app:tint="@color/roxo" />
 
             <TextView
                 android:id="@+id/titulo"
@@ -40,39 +40,47 @@
                 android:gravity="center"
                 android:textAppearance="@style/Lav.Texto.H2" />
 
-            <LinearLayout
-                android:id="@+id/painelTempo"
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/espaco_2"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_marginTop="@dimen/espaco_3">
 
-                <TextView
-                    android:id="@+id/minutos"
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progresso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/Lav.Texto.Valor"
-                    android:textColor="@color/agua"
-                    android:textSize="48sp" />
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"
+                    app:indicatorColor="@color/lilas"
+                    app:indicatorSize="@dimen/anel_ciclo"
+                    app:trackColor="@color/borda"
+                    app:trackCornerRadius="6dp"
+                    app:trackThickness="@dimen/anel_ciclo_espessura" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/painelTempo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ciclo_restantes"
-                    android:textAppearance="@style/Lav.Texto.Auxiliar" />
-            </LinearLayout>
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/progresso"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/espaco_3"
-                android:importantForAccessibility="no"
-                app:indicatorColor="@color/agua"
-                app:trackColor="@color/info_fundo"
-                app:trackCornerRadius="4dp"
-                app:trackThickness="8dp" />
+                    <TextView
+                        android:id="@+id/minutos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Lav.Texto.Valor"
+                        android:textColor="@color/roxo"
+                        android:textSize="@dimen/texto_tempo"
+                        android:lineHeight="@dimen/linha_tempo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ciclo_restantes"
+                        android:textAppearance="@style/Lav.Texto.Auxiliar" />
+                </LinearLayout>
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/subtitulo"

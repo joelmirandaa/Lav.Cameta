@@ -38,7 +38,7 @@ public final class NotificationHelper {
                 .setSmallIcon(R.drawable.ic_circle_check)
                 .setContentTitle(titulo)
                 .setContentText(texto)
-                .setColor(ContextCompat.getColor(context, R.color.agua))
+                .setColor(ContextCompat.getColor(context, R.color.roxo))
                 .setAutoCancel(true)
                 .setContentIntent(pendente);
         NotificationManagerCompat.from(context).notify(id, builder.build());

@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">lav.cametá</string>
     <string name="logo_descricao">lav.cametá</string>
-    <string name="slogan">Praticidade para o seu dia a dia</string>
 
     <!-- Ações comuns -->
     <string name="acao_entrar">Entrar</string>

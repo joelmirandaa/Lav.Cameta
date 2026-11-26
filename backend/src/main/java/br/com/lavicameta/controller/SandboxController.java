@@ -71,15 +71,22 @@ public class SandboxController {
                 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>lav.cametá — checkout de homologação</title>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
                 <style>
-                 :root{--marinho:#0B2A4A;--agua:#1F6FD1;--borda:#D6E3F0;--texto2:#4A5D73;--alerta:#B26B00}
-                 body{margin:0;font-family:Outfit,system-ui,sans-serif;background:#F3F8FD;color:var(--marinho)}
-                 main{max-width:420px;margin:32px auto;padding:24px;background:#fff;border:1px solid var(--borda);border-radius:16px}
-                 h1{font-size:24px;margin:0 0 8px}.selo{color:var(--alerta);font-weight:600}
-                 dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px}dt{color:var(--texto2)}dd{margin:0;word-break:break-all}
-                 button{width:100%%;height:48px;border-radius:12px;font:600 16px Outfit,system-ui,sans-serif;margin-top:12px;cursor:pointer}
-                 .primario{background:var(--agua);color:#fff;border:0}.secundario{background:transparent;color:var(--marinho);border:2px solid var(--marinho)}
-                 .aviso{padding:12px;border-radius:12px;background:#F3F8FD}
+                 :root{--cor-principal:#45257A;--cor-principal-escura:#341B5E;--cor-secundaria:#9B7FE0;--cor-fundo-secao:#F4F3F7;
+                  --cor-texto:#2E2B36;--cor-texto-secundario:#5E5A6B;--cor-borda:#E2DEEB;--cor-alerta:#B26B00;--cor-info-fundo:#EFEBF5}
+                 body{margin:0;font-family:Outfit,system-ui,sans-serif;line-height:1.5;background:var(--cor-fundo-secao);color:var(--cor-texto)}
+                 main{max-width:420px;margin:32px auto;padding:24px;background:#fff;border:1px solid var(--cor-borda);border-radius:16px;
+                  box-shadow:0 2px 8px rgba(69,37,122,0.08)}
+                 h1{font-size:24px;line-height:1.2;margin:0 0 8px}.selo{color:var(--cor-alerta);font-weight:600}
+                 dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px}dt{color:var(--cor-texto-secundario)}dd{margin:0;word-break:break-all}
+                 button{width:100%%;height:52px;border-radius:12px;font:600 16px Outfit,system-ui,sans-serif;margin-top:12px;cursor:pointer;
+                  transition:background-color 150ms ease-out}
+                 button:focus-visible{outline:2px solid var(--cor-secundaria);box-shadow:0 0 0 3px rgba(155,127,224,0.4)}
+                 .primario{background:var(--cor-principal);color:#fff;border:0}.primario:hover,.primario:active{background:var(--cor-principal-escura)}
+                 .secundario{background:transparent;color:var(--cor-principal);border:2px solid var(--cor-principal)}
+                 .aviso{padding:12px;border-radius:12px;background:var(--cor-info-fundo);color:var(--cor-principal)}
                 </style></head><body><main>
                 <h1>Checkout de homologação</h1>
                 <p class="selo">Ambiente de testes — nenhum valor é cobrado.</p>

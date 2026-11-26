@@ -2,14 +2,14 @@
 <resources>
 
     <style name="Theme.Lavicameta" parent="Theme.Material3.Light.NoActionBar">
-        <item name="colorPrimary">@color/agua</item>
+        <item name="colorPrimary">@color/roxo</item>
         <item name="colorOnPrimary">@color/branco</item>
         <item name="colorPrimaryContainer">@color/info_fundo</item>
-        <item name="colorOnPrimaryContainer">@color/marinho</item>
-        <item name="colorSecondary">@color/marinho</item>
+        <item name="colorOnPrimaryContainer">@color/roxo</item>
+        <item name="colorSecondary">@color/roxo</item>
         <item name="colorOnSecondary">@color/branco</item>
         <item name="colorSecondaryContainer">@color/info_fundo</item>
-        <item name="colorOnSecondaryContainer">@color/marinho</item>
+        <item name="colorOnSecondaryContainer">@color/roxo</item>
         <item name="colorError">@color/erro</item>
         <item name="android:colorBackground">@color/branco</item>
         <item name="colorSurface">@color/branco</item>
@@ -21,7 +21,8 @@
         <item name="colorSurfaceContainerLow">@color/branco</item>
         <item name="colorSurfaceContainerHigh">@color/branco</item>
         <item name="colorControlNormal">@color/texto</item>
-        <!-- Superfícies brancas: sem tingimento azulado de elevação do Material 3. -->
+        <item name="colorControlActivated">@color/roxo</item>
+        <!-- Superfícies brancas: sem tingimento de elevação do Material 3. -->
         <item name="elevationOverlayEnabled">false</item>
         <item name="colorSurfaceContainerLowest">@color/branco</item>
         <item name="colorSurfaceContainerHighest">@color/branco</item>
@@ -29,11 +30,12 @@
         <item name="android:textColorSecondary">@color/texto_secundario</item>
         <item name="android:fontFamily">@font/outfit</item>
         <item name="fontFamily">@font/outfit</item>
-        <item name="android:statusBarColor">@color/branco</item>
+        <!-- Guia, seção 8: fundo da tela cinza-névoa com cartões e cabeçalhos brancos. -->
+        <item name="android:statusBarColor">@color/fundo_secao</item>
         <item name="android:navigationBarColor">@color/branco</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
-        <item name="android:windowBackground">@color/branco</item>
+        <item name="android:windowBackground">@color/fundo_secao</item>
         <item name="materialButtonStyle">@style/Lav.Botao</item>
         <item name="materialButtonOutlinedStyle">@style/Lav.Botao.Secundario</item>
         <item name="textInputStyle">@style/Lav.Campo</item>
@@ -61,29 +63,30 @@
     </style>
 
     <!-- Tipografia (guia, seção 4): títulos 700, texto 400, ênfase 600. -->
+    <!-- Altura de linha: textos 1,5 e títulos 1,2 (lineHeight exato; minSdk 31). -->
     <style name="Lav.Texto" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:fontFamily">@font/outfit</item>
         <item name="android:textSize">@dimen/texto_corpo</item>
         <item name="android:textColor">@color/texto</item>
-        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:lineHeight">@dimen/linha_corpo</item>
     </style>
 
     <style name="Lav.Texto.H1">
         <item name="android:textSize">@dimen/texto_h1</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:lineHeight">@dimen/linha_h1</item>
     </style>
 
     <style name="Lav.Texto.H2">
         <item name="android:textSize">@dimen/texto_h2</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:lineHeight">@dimen/linha_h2</item>
     </style>
 
     <style name="Lav.Texto.H3">
         <item name="android:textSize">@dimen/texto_h3</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:lineHeight">@dimen/linha_h3</item>
     </style>
 
     <style name="Lav.Texto.Enfase">
@@ -92,11 +95,13 @@
 
     <style name="Lav.Texto.Auxiliar">
         <item name="android:textSize">@dimen/texto_auxiliar</item>
+        <item name="android:lineHeight">@dimen/linha_auxiliar</item>
         <item name="android:textColor">@color/texto_secundario</item>
     </style>
 
     <style name="Lav.Texto.Rotulo">
         <item name="android:textSize">@dimen/texto_minimo</item>
+        <item name="android:lineHeight">@dimen/linha_minimo</item>
         <item name="android:textColor">@color/texto_secundario</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:letterSpacing">0.12</item>
@@ -106,9 +111,11 @@
     <style name="Lav.Texto.Valor">
         <item name="android:textSize">@dimen/texto_h1</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:lineHeight">@dimen/linha_h1</item>
+        <item name="android:fontFeatureSettings">tnum</item>
     </style>
 
-    <!-- Botões (guia, seção 5): 48dp, raio 12, primário azul-água, secundário contornado marinho. -->
+    <!-- Botões (guia, seção 5): 52dp, raio 12, primário roxo (toque #341B5E), secundário contornado roxo 2dp. -->
     <style name="Lav.Botao" parent="Widget.Material3.Button">
         <item name="android:minHeight">@dimen/altura_controle</item>
         <item name="android:insetTop">0dp</item>
@@ -128,10 +135,10 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="cornerRadius">@dimen/raio</item>
-        <item name="strokeColor">@color/marinho</item>
+        <item name="strokeColor">@color/roxo</item>
         <item name="strokeWidth">2dp</item>
-        <item name="android:textColor">@color/marinho</item>
-        <item name="iconTint">@color/marinho</item>
+        <item name="android:textColor">@color/roxo</item>
+        <item name="iconTint">@color/roxo</item>
         <item name="android:fontFamily">@font/outfit</item>
         <item name="android:textFontWeight">600</item>
         <item name="android:textSize">@dimen/texto_corpo</item>
@@ -141,19 +148,20 @@
 
     <style name="Lav.Botao.Texto" parent="Widget.Material3.Button.TextButton">
         <item name="android:minHeight">@dimen/altura_controle</item>
-        <item name="android:textColor">@color/agua</item>
+        <item name="android:textColor">@color/roxo</item>
         <item name="android:fontFamily">@font/outfit</item>
         <item name="android:textFontWeight">600</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:letterSpacing">0</item>
     </style>
 
-    <!-- Campos (guia, seção 5): rótulo visível, borda 1dp #D6E3F0, foco azul-água, raio 12. -->
+    <!-- Campos (guia, seção 5): fundo branco, rótulo visível, borda 1dp #E2DEEB, foco 2dp lilás, raio 12. -->
     <style name="Lav.Campo" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusTopStart">@dimen/raio</item>
         <item name="boxCornerRadiusTopEnd">@dimen/raio</item>
         <item name="boxCornerRadiusBottomStart">@dimen/raio</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/raio</item>
+        <item name="boxBackgroundColor">@color/branco</item>
         <item name="boxStrokeColor">@color/selector_borda_campo</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxStrokeWidthFocused">2dp</item>
@@ -161,7 +169,7 @@
         <item name="errorTextColor">@color/erro</item>
         <item name="errorIconDrawable">@drawable/ic_circle_alert</item>
         <item name="errorIconTint">@color/erro</item>
-        <item name="hintTextColor">@color/agua</item>
+        <item name="hintTextColor">@color/roxo</item>
         <item name="android:textColorHint">@color/texto_secundario</item>
         <item name="endIconTint">@color/texto_secundario</item>
         <item name="hintTextAppearance">@style/Lav.Texto.Auxiliar</item>
@@ -179,7 +187,7 @@
     <style name="Lav.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="android:background">@color/branco</item>
         <item name="titleTextAppearance">@style/Lav.Texto.H3</item>
-        <item name="navigationIconTint">@color/marinho</item>
+        <item name="navigationIconTint">@color/roxo</item>
     </style>
 
     <style name="Lav.BottomNav" parent="Widget.Material3.BottomNavigationView">
@@ -194,13 +202,13 @@
         <item name="android:color">@color/info_fundo</item>
     </style>
 
-    <!-- Abas (guia): aba ativa com sublinhado 3dp azul-água. -->
+    <!-- Abas (guia): aba ativa em roxo com sublinhado 3dp lilás. -->
     <style name="Lav.Abas" parent="Widget.Material3.TabLayout">
-        <item name="tabIndicatorColor">@color/agua</item>
+        <item name="tabIndicatorColor">@color/lilas</item>
         <item name="tabIndicatorHeight">3dp</item>
         <item name="tabIndicatorFullWidth">true</item>
-        <item name="tabSelectedTextColor">@color/agua</item>
-        <item name="tabTextColor">@color/marinho</item>
+        <item name="tabSelectedTextColor">@color/roxo</item>
+        <item name="tabTextColor">@color/texto</item>
         <item name="tabTextAppearance">@style/Lav.Texto.Enfase</item>
         <item name="android:background">@color/branco</item>
     </style>
@@ -217,13 +225,13 @@
     </style>
 
     <style name="Lav.Carregando" parent="Widget.Material3.CircularProgressIndicator">
-        <item name="indicatorColor">@color/agua</item>
-        <item name="trackColor">@color/info_fundo</item>
+        <item name="indicatorColor">@color/roxo</item>
+        <item name="trackColor">@color/borda</item>
     </style>
 
     <style name="ThemeOverlay.Lav.Dialogo" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="shapeAppearanceOverlay">@style/Lav.Forma.RaioGrande</item>
-        <item name="colorPrimary">@color/agua</item>
+        <item name="colorPrimary">@color/roxo</item>
         <item name="android:fontFamily">@font/outfit</item>
     </style>
 </resources>

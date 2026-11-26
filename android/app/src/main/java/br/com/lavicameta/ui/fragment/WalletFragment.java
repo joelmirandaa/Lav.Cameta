@@ -35,7 +35,7 @@ public class WalletFragment extends BaseFragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         vm = viewModel(WalletViewModel.class);
         EstadoView estado = new EstadoView(view);
-        b.atualizar.setColorSchemeResources(R.color.agua);
+        b.atualizar.setColorSchemeResources(R.color.roxo);
         b.atualizar.setOnRefreshListener(vm::carregar);
         vm.mensagem().observe(getViewLifecycleOwner(), e -> {
             String texto = e.consume();

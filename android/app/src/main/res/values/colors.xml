@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Paleta oficial — docs/lav-cameta-guia-de-design.md, seção 3. Não usar cores fora daqui. -->
+<!-- Paleta oficial — docs/lav-cameta-guia-de-design.md, seções 3 e 17. Não usar cores fora daqui. -->
 <resources>
-    <color name="marinho">#0B2A4A</color>
-    <color name="agua">#1F6FD1</color>
-    <color name="agua_escuro">#185BB0</color>
-    <color name="destaque">#6EC6F5</color>
+    <!-- Marca -->
+    <color name="roxo">#45257A</color>
+    <color name="roxo_escuro">#341B5E</color>
+    <!-- Lilás: só ícones, ilustrações, bordas de foco e textos ≥ 24 sp (contraste ~3,3:1 sobre branco). -->
+    <color name="lilas">#9B7FE0</color>
+
+    <!-- Neutros -->
     <color name="branco">#FFFFFF</color>
-    <color name="fundo_secao">#F3F8FD</color>
-    <color name="texto">#0B2A4A</color>
-    <color name="texto_secundario">#4A5D73</color>
-    <color name="borda">#D6E3F0</color>
+    <color name="fundo_secao">#F4F3F7</color>
+    <color name="texto">#2E2B36</color>
+    <color name="texto_secundario">#5E5A6B</color>
+    <color name="borda">#E2DEEB</color>
+
+    <!-- Estados -->
     <color name="sucesso">#1E7F50</color>
     <color name="alerta">#B26B00</color>
     <color name="erro">#C62828</color>
-    <color name="info">#1F6FD1</color>
-    <!-- Fundos claros dos estados (alertas: "fundo claro da cor do estado"). -->
+    <color name="info">#5B3A9E</color>
+    <!-- Fundos claros dos estados (alertas: "fundo claro da cor do estado"); tons a ~10% da cor sobre branco. -->
     <color name="sucesso_fundo">#E7F4ED</color>
     <color name="alerta_fundo">#FBF1E0</color>
     <color name="erro_fundo">#FBEAEA</color>
-    <color name="info_fundo">#E8F0F8</color>
+    <color name="info_fundo">#EFEBF5</color>
 </resources>

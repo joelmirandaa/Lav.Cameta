@@ -45,11 +45,11 @@ public final class UiText {
         int texto;
         int fundo;
         if (Maquina.MANUTENCAO.equals(m.status)) {
+            texto = R.color.texto_secundario;
+            fundo = R.color.fundo_secao;
+        } else if (Maquina.EM_USO.equals(m.status) || m.reservada) {
             texto = R.color.alerta;
             fundo = R.color.alerta_fundo;
-        } else if (Maquina.EM_USO.equals(m.status) || m.reservada) {
-            texto = R.color.info;
-            fundo = R.color.info_fundo;
         } else {
             texto = R.color.sucesso;
             fundo = R.color.sucesso_fundo;

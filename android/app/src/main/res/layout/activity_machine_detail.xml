@@ -32,7 +32,7 @@
                     android:importantForAccessibility="no"
                     android:padding="18dp"
                     android:src="@drawable/ic_washing_machine"
-                    app:tint="@color/marinho" />
+                    app:tint="@color/roxo" />
 
                 <LinearLayout
                     android:layout_width="0dp"

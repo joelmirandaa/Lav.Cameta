@@ -6,5 +6,9 @@
     <dimen name="texto_h1">40sp</dimen>
     <dimen name="texto_h2">32sp</dimen>
     <dimen name="texto_h3">24sp</dimen>
+    <dimen name="linha_h1">48sp</dimen>
+    <dimen name="linha_h2">38sp</dimen>
+    <dimen name="linha_h3">29sp</dimen>
+    <dimen name="anel_ciclo">240dp</dimen>
     <dimen name="largura_logo">260dp</dimen>
 </resources>

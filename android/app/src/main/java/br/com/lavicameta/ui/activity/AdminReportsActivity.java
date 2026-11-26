@@ -75,7 +75,7 @@ public class AdminReportsActivity extends BaseActivity {
             }
         });
         b.periodo.setOnClickListener(v -> escolherPeriodo());
-        b.atualizar.setColorSchemeResources(R.color.agua);
+        b.atualizar.setColorSchemeResources(R.color.roxo);
         b.atualizar.setOnRefreshListener(vm::carregar);
 
         vm.relatorio().observe(this, resultado -> {

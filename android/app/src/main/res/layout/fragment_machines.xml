@@ -9,17 +9,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/altura_cabecalho"
+        android:background="@color/branco"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/margem_tela"
         android:paddingEnd="@dimen/margem_tela">
 
         <ImageView
-            android:layout_width="140dp"
+            android:layout_width="@dimen/largura_logo_cabecalho"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:contentDescription="@string/logo_descricao"
-            android:src="@drawable/logo_principal" />
+            android:src="@drawable/logo_nome" />
 
         <Space
             android:layout_width="0dp"

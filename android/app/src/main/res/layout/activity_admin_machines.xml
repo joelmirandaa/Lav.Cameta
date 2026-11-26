@@ -38,7 +38,7 @@
         android:layout_margin="@dimen/margem_tela"
         android:text="@string/acao_nova_maquina"
         android:textColor="@color/branco"
-        app:backgroundTint="@color/agua"
+        app:backgroundTint="@color/roxo"
         app:icon="@drawable/ic_plus"
         app:iconTint="@color/branco" />
 </FrameLayout>

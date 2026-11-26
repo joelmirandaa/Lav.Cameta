@@ -27,7 +27,7 @@ public class AdminMachinesActivity extends BaseActivity {
         AdminMachineAdapter adapter = new AdminMachineAdapter(this::editar, vm::alternarManutencao);
         b.lista.setLayoutManager(new GridLayoutManager(this, getResources().getInteger(R.integer.colunas_maquinas)));
         b.lista.setAdapter(adapter);
-        b.atualizar.setColorSchemeResources(R.color.agua);
+        b.atualizar.setColorSchemeResources(R.color.roxo);
         b.atualizar.setOnRefreshListener(vm::carregar);
         b.nova.setOnClickListener(v -> editar(null));
         vm.mensagem().observe(this, e -> {

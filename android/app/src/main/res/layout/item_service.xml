@@ -9,7 +9,7 @@
     android:clickable="true"
     android:focusable="true"
     app:cardForegroundColor="@android:color/transparent"
-    app:checkedIconTint="@color/agua"
+    app:checkedIconTint="@color/roxo"
     app:strokeColor="@color/selector_borda_servico">
 
     <LinearLayout

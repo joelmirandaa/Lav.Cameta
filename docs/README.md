@@ -7,7 +7,7 @@ Sistema da lavanderia de autoatendimento **lav.cametá** (Cametá – PA): aplic
 ## Fontes e classificação
 - `fontes/Documentacao-Lav-Cameta.pdf` (v1.0): requisitos RF01–RF21, RNF01–RNF10, RN01–RN13, telas T01–T07, ER e plano de testes.
 - `fontes/Prompt-original.txt`: estrutura, linguagem e decisão pelo checkout Bex.
-- `lav-cameta-guia-de-design.md`: identidade visual oficial (paleta azul-marinho/azul-água, Outfit, Lucide). Substitui a referência roxa do protótipo WashFlow (RNF09).
+- `lav-cameta-guia-de-design.md`: identidade visual oficial (paleta roxo/lilás/cinza/branco, Outfit, Lucide), revisada em 2026-11-25; atende à identidade roxa pedida no RNF09.
 - **Confirmado** = expresso na documentação; **Proposto** = decisão técnica; **Pendente** = depende de informação externa.
 
 ## O que está implementado
@@ -106,4 +106,4 @@ Resultados e cobertura dos casos CT01–CT25 em [plano de testes](requisitos/tes
 - Política de retenção/anonimização de dados pessoais (LGPD, RNF07).
 
 ## Documentação
-[Como rodar e testar](rodar.md) · [Arquitetura](arquitetura/decisoes.md) · [API](api/contratos.md) · [Modelo de dados](banco-de-dados/modelagem.md) · [Módulos](funcionalidades/modulos.md) · [Fluxos](fluxos/jornadas.md) · [Requisitos](requisitos/requisitos.md) · [Regras](requisitos/regras-negocio.md) · [Testes](requisitos/testes.md) · [Estilo](STYLE.md) · [Guia de design](lav-cameta-guia-de-design.md) · [Agentes](AGENTS.md) · [Mudanças](alteracoes/registro.md) · [Validação](alteracoes/validacao.md) · [Utilitários baixados](utilitarios.md)
+[Como rodar e testar](rodar.md) · [Arquitetura](arquitetura/decisoes.md) · [API](api/contratos.md) · [Modelo de dados](banco-de-dados/modelagem.md) · [Módulos](funcionalidades/modulos.md) · [Fluxos](fluxos/jornadas.md) · [Requisitos](requisitos/requisitos.md) · [Regras](requisitos/regras-negocio.md) · [Testes](requisitos/testes.md) · [Estilo](STYLE.md) · [Guia de design](lav-cameta-guia-de-design.md) · [Agentes](AGENTS.md) · [Mudanças](alteracoes/registro.md) · [Validação](alteracoes/validacao.md) · [Utilitários baixados](utilitarios.md) · [Roteiro da apresentação](apresentacao.md)

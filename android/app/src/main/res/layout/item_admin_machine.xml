@@ -24,7 +24,7 @@
                 android:background="@drawable/bg_icone_maquina"
                 android:importantForAccessibility="no"
                 android:padding="12dp"
-                app:tint="@color/marinho" />
+                app:tint="@color/roxo" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -44,22 +44,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/Lav.Texto.Auxiliar" />
-            </LinearLayout>
 
-            <TextView
-                android:id="@+id/status"
-                style="@style/Lav.Selo" />
+                <!-- Selo abaixo da descrição (como no cartão do cliente) para não espremer o nome. -->
+                <TextView
+                    android:id="@+id/status"
+                    style="@style/Lav.Selo"
+                    android:layout_marginTop="@dimen/espaco_1" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/espaco_2"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/editar"
-                style="@style/Lav.Botao.Secundario"
+                style="@style/Lav.Botao.Secundario.Compacto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -68,7 +71,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/manutencao"
-                style="@style/Lav.Botao.Secundario"
+                style="@style/Lav.Botao.Secundario.Compacto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/espaco_1"

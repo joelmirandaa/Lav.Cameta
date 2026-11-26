@@ -39,15 +39,15 @@ public class ChartView extends View {
     public ChartView(Context context, AttributeSet attrs) {
         super(context, attrs);
         densidade = getResources().getDisplayMetrics().density;
-        int agua = ContextCompat.getColor(context, R.color.agua);
+        int corSerie = ContextCompat.getColor(context, R.color.roxo);
         grade.setColor(ContextCompat.getColor(context, R.color.borda));
         grade.setStrokeWidth(densidade);
-        serie.setColor(agua);
+        serie.setColor(corSerie);
         serie.setStrokeWidth(3 * densidade);
         serie.setStyle(Paint.Style.STROKE);
         serie.setStrokeCap(Paint.Cap.ROUND);
         serie.setStrokeJoin(Paint.Join.ROUND);
-        pontos.setColor(agua);
+        pontos.setColor(corSerie);
         rotulo.setColor(ContextCompat.getColor(context, R.color.texto_secundario));
         rotulo.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
         rotulo.setTextAlign(Paint.Align.CENTER);

@@ -39,7 +39,7 @@
 | RNF006 | RNF06 | Sem PAN; tokenização | Inspeção de banco e logs |
 | RNF007 | RNF07 | LGPD | Avaliação privacidade |
 | RNF008 | RNF08 | 99% de disponibilidade | Observabilidade/SLO |
-| RNF009 | RNF09 | Português e identidade roxa no protótipo | Revisão de UI; cor final pendente |
+| RNF009 | RNF09 | Português e identidade roxa no protótipo | Revisão de UI; atendido pela identidade roxa do guia de design (2026-11-25) |
 | RNF010 | RNF10 | Admin separado do cliente | Testes RBAC |
 
 ## Escopo de MVP — proposta

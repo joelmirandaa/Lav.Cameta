@@ -11,16 +11,29 @@
     <dimen name="raio_pequeno">8dp</dimen>
     <dimen name="raio">12dp</dimen>
     <dimen name="raio_grande">16dp</dimen>
-    <dimen name="altura_controle">48dp</dimen>
-    <dimen name="altura_cabecalho">64dp</dimen>
+    <dimen name="altura_controle">52dp</dimen>
+    <dimen name="altura_cabecalho">56dp</dimen>
     <dimen name="padding_card">16dp</dimen>
     <dimen name="icone">24dp</dimen>
-    <dimen name="texto_h1">32sp</dimen>
-    <dimen name="texto_h2">26sp</dimen>
-    <dimen name="texto_h3">20sp</dimen>
+    <dimen name="texto_h1">28sp</dimen>
+    <dimen name="texto_h2">22sp</dimen>
+    <dimen name="texto_h3">18sp</dimen>
     <dimen name="texto_corpo">16sp</dimen>
     <dimen name="texto_auxiliar">14sp</dimen>
     <dimen name="texto_minimo">12sp</dimen>
+    <!-- Altura de linha: títulos 1,2 / textos 1,5 (guia, seção 4). -->
+    <dimen name="linha_h1">34sp</dimen>
+    <dimen name="linha_h2">26sp</dimen>
+    <dimen name="linha_h3">22sp</dimen>
+    <dimen name="linha_corpo">24sp</dimen>
+    <dimen name="linha_auxiliar">21sp</dimen>
+    <dimen name="linha_minimo">18sp</dimen>
+    <!-- Indicador de ciclo (anel inspirado na porta da logo). -->
+    <dimen name="anel_ciclo">200dp</dimen>
+    <dimen name="anel_ciclo_espessura">12dp</dimen>
+    <dimen name="texto_tempo">40sp</dimen>
+    <dimen name="linha_tempo">48sp</dimen>
+    <dimen name="largura_logo_cabecalho">132dp</dimen>
     <dimen name="largura_logo">200dp</dimen>
     <dimen name="qr_code">220dp</dimen>
     <dimen name="altura_grafico">200dp</dimen>

@@ -46,7 +46,7 @@ public class HistoryFragment extends BaseFragment {
                 }
             }
         });
-        b.atualizar.setColorSchemeResources(R.color.agua);
+        b.atualizar.setColorSchemeResources(R.color.roxo);
         b.atualizar.setOnRefreshListener(vm::recarregar);
         vm.itens().observe(getViewLifecycleOwner(), resultado -> {
             b.atualizar.setRefreshing(false);

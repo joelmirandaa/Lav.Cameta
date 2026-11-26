@@ -19,14 +19,6 @@
             android:contentDescription="@string/logo_descricao"
             android:src="@drawable/logo_vertical" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/espaco_1"
-            android:gravity="center"
-            android:text="@string/slogan"
-            android:textAppearance="@style/Lav.Texto.Auxiliar" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/campoIdentificador"
             style="@style/Lav.CampoLayout"

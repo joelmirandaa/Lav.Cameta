@@ -77,9 +77,9 @@
 
     <style name="Lav.Alerta.Info">
         <item name="android:background">@drawable/bg_estado_info</item>
-        <item name="android:textColor">@color/marinho</item>
+        <item name="android:textColor">@color/info</item>
         <item name="android:drawableStart">@drawable/ic_clock</item>
-        <item name="android:drawableTint">@color/agua</item>
+        <item name="android:drawableTint">@color/info</item>
         <item name="android:visibility">visible</item>
     </style>
 
@@ -88,6 +88,16 @@
         <item name="android:textColor">@color/alerta</item>
         <item name="android:drawableStart">@drawable/ic_circle_alert</item>
         <item name="android:drawableTint">@color/alerta</item>
+    </style>
+
+    <!-- Botão secundário em pares lado a lado (cartões em 2 colunas no tablet): ícone 20dp e padding menor, sem quebrar o rótulo. -->
+    <style name="Lav.Botao.Secundario.Compacto">
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconPadding">6dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="Lav.Divisor" parent="">
