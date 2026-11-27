@@ -29,18 +29,20 @@
 ## Requisitos não funcionais
 **Origem PDF seção 1.5, páginas 2–3; todos Confirmado.**
 
-| ID | Original | Requisito | Verificação planejada |
-|---|---|---|---|
-| RNF001 | RNF01 | Android nativo | Build/emulador Android |
-| RNF002 | RNF02 | Status em até 5 segundos | Teste de propagação |
-| RNF003 | RNF03 | PIX em até 10 s após compensação | Sandbox com timestamps |
-| RNF004 | RNF04 | Hash seguro de senhas | Revisão de segurança |
-| RNF005 | RNF05 | HTTPS/TLS | Inspeção de rede |
-| RNF006 | RNF06 | Sem PAN; tokenização | Inspeção de banco e logs |
-| RNF007 | RNF07 | LGPD | Avaliação privacidade |
-| RNF008 | RNF08 | 99% de disponibilidade | Observabilidade/SLO |
-| RNF009 | RNF09 | Português e identidade roxa no protótipo | Revisão de UI; atendido pela identidade roxa do guia de design (2026-11-25) |
-| RNF010 | RNF10 | Admin separado do cliente | Testes RBAC |
+| ID | Original | Requisito | Verificação planejada | Situação (2026-11-27) | Evidência / o que falta |
+|---|---|---|---|---|---|
+| RNF001 | RNF01 | Android nativo | Build/emulador Android | ✓ Atendido | App Java/MVVM em `android/`; `./gradlew assembleDebug`; validado em emulador e celular físico |
+| RNF002 | RNF02 | Status em até 5 segundos | Teste de propagação | ✓ Atendido | Polling de 5 s na lista e no acompanhamento (`MachinesViewModel`, `CycleViewModel`, `Poller`) |
+| RNF003 | RNF03 | PIX em até 10 s após compensação | Sandbox com timestamps | ◐ Parcial | Backend processa o webhook na hora e o app consulta o pedido a cada 3 s; medição real depende do provedor Bex (pendente) |
+| RNF004 | RNF04 | Hash seguro de senhas | Revisão de segurança | ✓ Atendido | BCrypt via `DelegatingPasswordEncoder` (AD-006) |
+| RNF005 | RNF05 | HTTPS/TLS | Inspeção de rede | ◐ Parcial | Build release bloqueia HTTP (`network_security_release.xml`); falta certificado TLS no proxy reverso de produção |
+| RNF006 | RNF06 | Sem PAN; tokenização | Inspeção de banco e logs | ✓ Atendido | `MetodoPagamentoSalvo` guarda só token do gateway, bandeira e últimos 4 dígitos; teste CT24. Geração do token depende da Bex |
+| RNF007 | RNF07 | LGPD | Avaliação privacidade | ◐ Parcial | Dados mínimos, senhas com hash, DTOs sem dados sensíveis; falta política de retenção/anonimização |
+| RNF008 | RNF08 | 99% de disponibilidade | Observabilidade/SLO | ◐ Parcial | Health check em `/api/v1/health`; falta infraestrutura de produção (monitoramento, backup) e teste de carga CT25 |
+| RNF009 | RNF09 | Português e identidade roxa no protótipo | Revisão de UI | ✓ Atendido | Textos em pt-BR e identidade roxa do guia de design (2026-11-25) |
+| RNF010 | RNF10 | Admin separado do cliente | Testes RBAC | ✓ Atendido | Papéis CLIENTE/ADMIN no JWT, `/admin/**` só ADMIN, tela própria `AdminLoginActivity`; testes de integração de acesso indevido |
+
+**Resumo:** 6 atendidos (RNF01, 02, 04, 06, 09, 10) e 4 parciais (RNF03, 05, 07, 08). Os parciais têm a parte de código pronta e dependem de fornecedor (Bex), infraestrutura de produção ou definição de política.
 
 ## Escopo de MVP — proposta
 **MVP:** RF001, RF002, RF004, RF005, RF008–RF010, RF012, RF013, RF017–RF020; incluir filtros e detalhe por dependência de navegação. **Posteriores:** login Google, cartão, histórico, acompanhamento robusto, perfil e gestão completa. **Futuro:** carteira de métodos salvos. Prioridades do PDF permanecem autoridade; recorte MVP precisa de aprovação.
